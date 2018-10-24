@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://cdn.static.runoob.com/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btn">点击我</button>
+</body>
+<script>
+    var btn = document.getElementById("btn")
+    btn.onclick = function () {
+        $.ajax({
+        url: "http://127.0.0.1:4100/complex.json?&types=ACCOUNT",              //请求地址
+        type: "get",                       //请求方式
+        dataType: "json",
+        success: function (response) {
+            // 此处放成功后执行的代码
+            console.log(response);
+            
+        },
+        fail: function (status) {
+            // 此处放失败后执行的代码
+            console.log(status);
+            
+        }
+    });
+        
+    }
+</script>
+</html>
